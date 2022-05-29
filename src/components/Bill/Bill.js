@@ -1,10 +1,12 @@
 import React from "react";
 
-function Bill() {
+function Bill(props) {
+  const { bill, setBill } = props;
+
   return (
     <>
       <h2>Bill</h2>
-      <input />
+      <input value={bill} onChange={(e) => setBill(e.target.value)} />
     </>
   );
 }

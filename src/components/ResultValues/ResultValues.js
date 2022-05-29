@@ -1,14 +1,16 @@
 import React from "react";
 
-function ResultValues() {
+function ResultValues(props) {
+  const { tipPerPerson, totalPerPerson, handleReset } = props;
+
   return (
     <div>
       <h2>Tip Amount</h2>
       <p>/ person</p>
-      <p>0.00</p>
+      <p>{tipPerPerson}</p>
       <h2>Total</h2>
       <p>/ person</p>
-      <p>0.00</p>
+      <p>{totalPerPerson}</p>
       <button>Reset</button>
     </div>
   );

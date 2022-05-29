@@ -1,10 +1,15 @@
 import React from "react";
 
-function NumberOfPeople() {
+function NumberOfPeople(props) {
+  const { numberOfPeople, setNumberOfPeople } = props;
+
   return (
     <>
       <h2>Number of People</h2>
-      <input />
+      <input
+        value={numberOfPeople}
+        onChange={(e) => setNumberOfPeople(e.target.value)}
+      />
     </>
   );
 }

@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
-function TipSelector() {
+function TipSelector(props) {
+  const { tip, setTip, customValue, setCustomValue } = props;
+  const [showCustomInput, setShowCustomInput] = useState(false);
+
   return (
     <>
       <h2>Select Tip</h2>
@@ -9,7 +12,16 @@ function TipSelector() {
       <button>15%</button>
       <button>25%</button>
       <button>50%</button>
-      <button>Custom</button>
+      <button
+        onClick={() => {
+          setShowCustomInput((showCustomInput) => !showCustomInput);
+        }}
+      >
+        Custom
+      </button>
+      {showCustomInput ? (
+        <input value={tip} onChange={(e) => setTip(e.target.value)} />
+      ) : null}
     </>
   );
 }
