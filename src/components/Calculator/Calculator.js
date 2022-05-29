@@ -13,10 +13,10 @@ function Calculator() {
   const [reset, setReset] = useState(false);
 
   useEffect(() => {
-    if (numberOfPeople === 0) {
+    if (numberOfPeople === 0 || numberOfPeople === "" || bill === "") {
       setTipPerPerson(0);
       setTotalPerPerson(0);
-    } else {
+    } else if (bill > 0 && numberOfPeople > 0) {
       const tempTotal = bill * (1 + tip / 100);
       const tempTotalPerPerson =
         Math.round((tempTotal / numberOfPeople) * 100) / 100;
