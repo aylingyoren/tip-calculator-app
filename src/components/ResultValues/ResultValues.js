@@ -11,7 +11,7 @@ function ResultValues(props) {
       <h2>Total</h2>
       <p>/ person</p>
       <p>{totalPerPerson}</p>
-      <button>Reset</button>
+      <button onClick={handleReset}>Reset</button>
     </div>
   );
 }

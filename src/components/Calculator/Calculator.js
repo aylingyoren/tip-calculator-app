@@ -10,7 +10,6 @@ function Calculator() {
   const [numberOfPeople, setNumberOfPeople] = useState(0);
   const [totalPerPerson, setTotalPerPerson] = useState(0);
   const [tipPerPerson, setTipPerPerson] = useState(0);
-  const [customValue, setCustomValue] = useState("");
   const [reset, setReset] = useState(false);
 
   useEffect(() => {
@@ -36,7 +35,6 @@ function Calculator() {
       setTip(0);
       setBill(0);
       setNumberOfPeople(0);
-      setCustomValue("");
     }
   }, [reset]);
 
@@ -46,12 +44,7 @@ function Calculator() {
     <>
       <h1>Calculator</h1>
       <Bill bill={bill} setBill={setBill} />
-      <TipSelector
-        tip={tip}
-        setTip={setTip}
-        customValue={customValue}
-        setCustomValue={setCustomValue}
-      />
+      <TipSelector tip={tip} setTip={setTip} />
       <NumberOfPeople
         numberOfPeople={numberOfPeople}
         setNumberOfPeople={setNumberOfPeople}

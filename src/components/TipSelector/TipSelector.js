@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 
+const TIPS = [5, 10, 15, 25, 50];
+
 function TipSelector(props) {
-  const { tip, setTip, customValue, setCustomValue } = props;
+  const { tip, setTip } = props;
   const [showCustomInput, setShowCustomInput] = useState(false);
 
   return (
     <>
       <h2>Select Tip</h2>
-      <button>5%</button>
-      <button>10%</button>
-      <button>15%</button>
-      <button>25%</button>
-      <button>50%</button>
+      <div>
+        {TIPS.map((tip) => {
+          return (
+            <button onClick={() => setTip(tip)} value={tip} key={tip}>
+              {tip}%
+            </button>
+          );
+        })}
+      </div>
       <button
         onClick={() => {
           setShowCustomInput((showCustomInput) => !showCustomInput);
