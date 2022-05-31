@@ -1,0 +1,31 @@
+.resultvalues {
+  padding-top: 2rem;
+}
+
+.result-group {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.result-header {
+  margin-bottom: 0;
+  color: var(--main-bg-color);
+}
+
+.result-subheader {
+  font-size: 1rem;
+  color: var(--placeholder-color);
+}
+
+.result-amount {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+.reset-btn {
+  width: 100%;
+  margin: 1.75rem auto;
+  text-transform: uppercase;
+}

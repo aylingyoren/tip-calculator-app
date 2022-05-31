@@ -3,6 +3,7 @@ import Bill from "../Bill/Bill";
 import NumberOfPeople from "../NumberOfPeople/NumberOfPeople";
 import ResultValues from "../ResultValues/ResultValues";
 import TipSelector from "../TipSelector/TipSelector";
+import "./Calculator.css";
 
 function Calculator() {
   const [tip, setTip] = useState(0);
@@ -41,22 +42,23 @@ function Calculator() {
   const handleReset = () => setReset(true);
 
   return (
-    <>
-      <h1>Calculator</h1>
-      <Bill bill={bill} setBill={setBill} />
-      <TipSelector tip={tip} setTip={setTip} />
-      <NumberOfPeople
-        numberOfPeople={numberOfPeople}
-        setNumberOfPeople={setNumberOfPeople}
-      />
-      <div>
+    <div className="calculator">
+      <div className="calculator-inputs">
+        <Bill bill={bill} setBill={setBill} />
+        <TipSelector tip={tip} setTip={setTip} />
+        <NumberOfPeople
+          numberOfPeople={numberOfPeople}
+          setNumberOfPeople={setNumberOfPeople}
+        />
+      </div>
+      <div className="calculator-results">
         <ResultValues
           tipPerPerson={tipPerPerson}
           totalPerPerson={totalPerPerson}
           handleReset={handleReset}
         />
       </div>
-    </>
+    </div>
   );
 }
 

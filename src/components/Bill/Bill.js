@@ -4,10 +4,14 @@ function Bill(props) {
   const { bill, setBill } = props;
 
   return (
-    <>
-      <h2>Bill</h2>
-      <input value={bill} onChange={(e) => setBill(e.target.value)} />
-    </>
+    <div className="bill">
+      <h3 className="h3-header calc-header">Bill</h3>
+      <input
+        className="input"
+        value={bill}
+        onChange={(e) => setBill(e.target.value)}
+      />
+    </div>
   );
 }
 

@@ -1,0 +1,24 @@
+.tips-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tips-btn,
+.custom-btn {
+  width: 30%;
+  padding: 0.2rem 1.5rem;
+  margin: 0.3rem;
+}
+
+.tips-btn {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+
+.custom-btn {
+  padding: 0.2rem;
+  background-color: var(--input-bg-color);
+  color: var(--title-color);
+}

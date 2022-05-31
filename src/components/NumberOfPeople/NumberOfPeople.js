@@ -5,8 +5,9 @@ function NumberOfPeople(props) {
 
   return (
     <>
-      <h2>Number of People</h2>
+      <h3 className="h3-header calc-header">Number of People</h3>
       <input
+        className="input"
         value={numberOfPeople}
         onChange={(e) => setNumberOfPeople(e.target.value)}
       />

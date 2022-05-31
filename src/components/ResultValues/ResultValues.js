@@ -1,17 +1,28 @@
 import React from "react";
+import "./ResultValues.css";
 
 function ResultValues(props) {
   const { tipPerPerson, totalPerPerson, handleReset } = props;
 
   return (
-    <div>
-      <h2>Tip Amount</h2>
-      <p>/ person</p>
-      <p>{tipPerPerson}</p>
-      <h2>Total</h2>
-      <p>/ person</p>
-      <p>{totalPerPerson}</p>
-      <button onClick={handleReset}>Reset</button>
+    <div className="resultvalues">
+      <div className="result-group">
+        <div className="result-group-item">
+          <h3 className="h3-header result-header">Tip Amount</h3>
+          <p className="result-subheader">/ person</p>
+        </div>
+        <p className="result-amount">${tipPerPerson}</p>
+      </div>
+      <div className="result-group">
+        <div className="result-group-item">
+          <h3 className="h3-header result-header">Total</h3>
+          <p className="result-subheader">/ person</p>
+        </div>
+        <p className="result-amount">${totalPerPerson}</p>
+      </div>
+      <button className="btn reset-btn" onClick={handleReset}>
+        Reset
+      </button>
     </div>
   );
 }
