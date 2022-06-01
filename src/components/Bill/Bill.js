@@ -10,6 +10,7 @@ function Bill(props) {
       <input
         className="input"
         value={bill}
+        placeholder="0"
         onChange={(e) => setBill(e.target.value)}
       />
       <Dollar className="dollar" />

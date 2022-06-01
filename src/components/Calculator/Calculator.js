@@ -7,8 +7,8 @@ import TipSelector from "../TipSelector/TipSelector";
 import "./Calculator.css";
 
 function Calculator() {
-  const [tip, setTip] = useState(0);
-  const [bill, setBill] = useState(0);
+  const [tip, setTip] = useState("");
+  const [bill, setBill] = useState("");
   const [numberOfPeople, setNumberOfPeople] = useState("");
   const [totalPerPerson, setTotalPerPerson] = useState(0);
   const [tipPerPerson, setTipPerPerson] = useState(0);
@@ -22,13 +22,14 @@ function Calculator() {
     ) {
       setTipPerPerson(0);
       setTotalPerPerson(0);
-    } else if (bill > 0 && parseFloat(numberOfPeople) > 0) {
-      const tempTotal = bill * (1 + tip / 100);
+    } else if (parseFloat(bill) > 0 && parseFloat(numberOfPeople) > 0) {
+      const tempTotal = parseFloat(bill) * (1 + tip / 100);
       const tempTotalPerPerson =
         Math.round((tempTotal / parseFloat(numberOfPeople)) * 100) / 100;
       const tempTipPerPerson =
-        Math.round(((tempTotal - bill) / parseFloat(numberOfPeople)) * 100) /
-        100;
+        Math.round(
+          ((tempTotal - parseFloat(bill)) / parseFloat(numberOfPeople)) * 100
+        ) / 100;
       setTipPerPerson(tempTipPerPerson);
       setTotalPerPerson(tempTotalPerPerson);
     }

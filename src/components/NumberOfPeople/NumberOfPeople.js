@@ -21,6 +21,7 @@ function NumberOfPeople(props) {
         <input
           className={error ? "input input-error" : "input"}
           value={numberOfPeople}
+          placeholder="0"
           onChange={(e) => setNumberOfPeople(e.target.value)}
         />
         <div>
