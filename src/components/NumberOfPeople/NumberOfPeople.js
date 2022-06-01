@@ -7,7 +7,7 @@ function NumberOfPeople(props) {
   const [error, showError] = useState(false);
 
   useEffect(() => {
-    if (numberOfPeople === "0") {
+    if (numberOfPeople === "0" || numberOfPeople === 0) {
       showError(true);
     } else {
       showError(false);

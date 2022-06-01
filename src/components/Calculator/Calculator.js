@@ -15,13 +15,11 @@ function Calculator() {
   const [reset, setReset] = useState(false);
 
   useEffect(() => {
-    if (
-      parseFloat(numberOfPeople) === 0 ||
-      numberOfPeople === "" ||
-      bill === ""
-    ) {
+    if (parseFloat(numberOfPeople) === 0 || bill === "") {
       setTipPerPerson(0);
       setTotalPerPerson(0);
+    } else if (numberOfPeople === "") {
+      setTotalPerPerson(parseFloat(bill));
     } else if (parseFloat(bill) > 0 && parseFloat(numberOfPeople) > 0) {
       const tempTotal = parseFloat(bill) * (1 + tip / 100);
       const tempTotalPerPerson =
