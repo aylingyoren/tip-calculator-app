@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
+import toggleActiveBtn from "../../helpers/toggleActiveBtn";
 import "./TipSelector.css";
 
 const TIPS = [5, 10, 15, 25, 50];
 
 function TipSelector(props) {
   const { tip, setTip } = props;
-  const [showCustomInput, setShowCustomInput] = useState(false);
 
   return (
     <div className="tipselector">
@@ -14,7 +14,10 @@ function TipSelector(props) {
         {TIPS.map((tip) => {
           return (
             <button
-              onClick={() => setTip(tip)}
+              onClick={(e) => {
+                setTip(tip);
+                toggleActiveBtn(e.target);
+              }}
               value={tip}
               key={tip}
               className="btn tips-btn"
@@ -23,21 +26,15 @@ function TipSelector(props) {
             </button>
           );
         })}
-        <button
-          onClick={() => {
-            setShowCustomInput((showCustomInput) => !showCustomInput);
+        <input
+          onChange={(e) => {
+            setTip(e.target.value);
           }}
-          className="btn custom-btn"
-        >
-          Custom
-        </button>
-        {showCustomInput ? (
-          <input
-            className="input"
-            value={tip}
-            onChange={(e) => setTip(e.target.value)}
-          />
-        ) : null}
+          onClick={() => toggleActiveBtn()}
+          className="btn custom-input"
+          placeholder="Custom"
+          value={tip}
+        />
       </div>
     </div>
   );

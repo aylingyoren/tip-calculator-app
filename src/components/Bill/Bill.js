@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactComponent as Dollar } from "../../images/icon-dollar.svg";
 
 function Bill(props) {
   const { bill, setBill } = props;
@@ -11,6 +12,7 @@ function Bill(props) {
         value={bill}
         onChange={(e) => setBill(e.target.value)}
       />
+      <Dollar className="dollar" />
     </div>
   );
 }

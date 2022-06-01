@@ -6,10 +6,10 @@
 }
 
 .tips-btn,
-.custom-btn {
+.custom-input {
   width: 30%;
-  padding: 0.2rem 1.5rem;
   margin: 0.3rem;
+  padding: 0.2rem 1.5rem;
 }
 
 .tips-btn {
@@ -17,8 +17,34 @@
   color: var(--white-color);
 }
 
-.custom-btn {
-  padding: 0.2rem;
-  background-color: var(--input-bg-color);
-  color: var(--title-color);
+.tips-btn-active {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.custom-input::placeholder {
+  text-align: center;
+}
+
+@media (min-width: 512px) and (max-width: 639px) {
+  .tips-btn,
+  .custom-input {
+    width: 49%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 352px) and (max-width: 511px) {
+  .tips-btn,
+  .custom-input {
+    width: 47%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 351px) {
+  .tips-btn,
+  .custom-input {
+    width: 46%;
+  }
 }

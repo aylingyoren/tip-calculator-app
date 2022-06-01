@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import toggleActiveBtn from "../../helpers/toggleActiveBtn";
 import Bill from "../Bill/Bill";
 import NumberOfPeople from "../NumberOfPeople/NumberOfPeople";
 import ResultValues from "../ResultValues/ResultValues";
@@ -36,6 +37,7 @@ function Calculator() {
       setTip(0);
       setBill(0);
       setNumberOfPeople(0);
+      toggleActiveBtn();
     }
   }, [reset]);
 
@@ -45,7 +47,11 @@ function Calculator() {
     <div className="calculator">
       <div className="calculator-inputs">
         <Bill bill={bill} setBill={setBill} />
-        <TipSelector tip={tip} setTip={setTip} />
+        <TipSelector
+          tip={tip}
+          setTip={setTip}
+          toggleActiveBtn={toggleActiveBtn}
+        />
         <NumberOfPeople
           numberOfPeople={numberOfPeople}
           setNumberOfPeople={setNumberOfPeople}

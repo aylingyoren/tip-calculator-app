@@ -21,11 +21,29 @@
 
 .result-amount {
   font-size: 3rem;
+  line-height: 2.5rem;
   color: var(--primary-color);
 }
 
 .reset-btn {
   width: 100%;
   margin: 1.75rem auto;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   text-transform: uppercase;
+}
+
+.reset-btn:hover {
+  background-color: var(--main-bg-color);
+}
+
+@media (min-width: 320px) and (max-width: 468px) {
+  .resultvalues {
+    padding-top: 1rem;
+  }
+
+  .result-amount {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
 }
