@@ -38,9 +38,9 @@ function Calculator() {
       setTipPerPerson(0);
       setTotalPerPerson(0);
       setReset(false);
-      setTip(0);
-      setBill(0);
-      setNumberOfPeople(0);
+      setTip("");
+      setBill("");
+      setNumberOfPeople("");
       toggleActiveBtn();
     }
   }, [reset]);
