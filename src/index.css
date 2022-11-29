@@ -1,13 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: hsl(172, 67%, 45%);
+  --secondary-color: hsl(183, 100%, 15%);
+  --title-color: hsl(186, 14%, 43%);
+  --placeholder-color: hsl(184, 14%, 56%);
+  --main-bg-color: hsl(185, 41%, 84%);
+  --input-bg-color: hsl(189, 41%, 97%);
+  --white-color: hsl(0, 0%, 100%);
+  --error-color: hsl(0, 100%, 50%);
+
+  --font: 1.5rem;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: var(--font);
+  background-color: var(--main-bg-color);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body,
+button,
+input {
+  font-family: "Space Mono", sans-serif;
 }

@@ -1,2 +1,7 @@
-.App {
+.logo {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

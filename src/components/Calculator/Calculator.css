@@ -1,0 +1,132 @@
+.calculator {
+  max-width: 60rem;
+  margin: 5rem auto 0;
+  padding: 3rem 3rem 3.2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--white-color);
+  gap: 5rem;
+}
+
+.calculator,
+.calculator-results {
+  border-radius: 1rem;
+}
+
+.calculator-inputs {
+  position: relative;
+}
+
+.calculator-inputs,
+.calculator-results {
+  width: 50%;
+}
+
+.bill,
+.tipselector {
+  margin-bottom: 2rem;
+}
+
+.h3-header {
+  font-size: 1.25rem;
+}
+
+.calc-header {
+  margin-bottom: 0.5rem;
+  color: var(--title-color);
+}
+
+.input,
+.custom-input {
+  text-align: right;
+}
+
+.input:hover,
+.custom-input:hover {
+  outline: 2px solid var(--primary-color);
+}
+
+.input {
+  border: none;
+  padding: 0.3rem 0.9rem 0.3rem 3rem;
+  font-size: 1em;
+  color: var(--secondary-color);
+  background-color: var(--input-bg-color);
+  border-radius: 0.2rem;
+  width: 100%;
+}
+
+.input-error,
+.input-error:hover {
+  outline: 2px solid var(--error-color);
+}
+
+.btn {
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.custom-input {
+  padding: 0.5rem 1rem;
+  background-color: var(--input-bg-color);
+  color: var(--title-color);
+  font-size: 1.4rem;
+  cursor: text;
+}
+
+.calculator-results {
+  padding: 1rem 3rem;
+  background-color: var(--secondary-color);
+}
+
+.bill,
+.numberofpeople {
+  position: relative;
+}
+
+.dollar,
+.person {
+  position: absolute;
+  top: 65%;
+  left: 5%;
+}
+
+@media (min-width: 320px) and (max-width: 969px) {
+  .calculator {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .calculator-inputs,
+  .calculator-results {
+    width: 100%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 576px) {
+  .calculator {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 468) {
+  .resultvalues {
+    padding-top: 0.5rem;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 468px) {
+  .calculator-results {
+    padding: 1.25rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .calculator-results {
+    padding: 1rem;
+  }
+}
