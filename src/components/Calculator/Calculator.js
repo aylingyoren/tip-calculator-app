@@ -6,6 +6,9 @@ import ResultValues from "../ResultValues/ResultValues";
 import TipSelector from "../TipSelector/TipSelector";
 import "./Calculator.css";
 
+const roundToHundred = (numberOne, numberTwo) =>
+  Math.round((numberOne / numberTwo) * 100) / 100;
+
 function Calculator() {
   const [tip, setTip] = useState(0);
   const [bill, setBill] = useState(0);
@@ -21,12 +24,8 @@ function Calculator() {
       setTotalPerPerson(bill);
     } else if (bill > 0 && numberOfPeople > 0) {
       const tempTotal = bill * (1 + tip / 100);
-      const tempTotalPerPerson =
-        Math.round((tempTotal / numberOfPeople) * 100) / 100;
-      const tempTipPerPerson =
-        Math.round(
-          ((tempTotal - bill) / numberOfPeople) * 100
-        ) / 100;
+      const tempTotalPerPerson = roundToHundred(tempTotal, numberOfPeople);
+      const tempTipPerPerson = roundToHundred(tempTotal - bill, numberOfPeople);
       setTipPerPerson(tempTipPerPerson);
       setTotalPerPerson(tempTotalPerPerson);
     }
@@ -34,11 +33,11 @@ function Calculator() {
 
   const handleReset = () => {
     setTipPerPerson(0);
-      setTotalPerPerson(0);
-      setTip(0);
-      setBill(0);
-      setNumberOfPeople(1);
-      toggleActiveBtn();
+    setTotalPerPerson(0);
+    setTip(0);
+    setBill(0);
+    setNumberOfPeople(1);
+    toggleActiveBtn();
   };
 
   return (

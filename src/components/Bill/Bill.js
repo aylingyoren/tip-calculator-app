@@ -4,7 +4,7 @@ import Dollar from "../../images/icon-dollar.svg";
 function Bill(props) {
   const { bill, setBill } = props;
 
-  if (!bill) setBill(0)
+  if (!bill) setBill(0);
 
   return (
     <div className="bill">
