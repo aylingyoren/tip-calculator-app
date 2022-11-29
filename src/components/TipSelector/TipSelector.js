@@ -7,6 +7,8 @@ const TIPS = [5, 10, 15, 25, 50];
 function TipSelector(props) {
   const { tip, setTip } = props;
 
+  if (!tip) setTip(0);
+
   return (
     <div className="tipselector">
       <h3 className="h3-header calc-header">Select Tip</h3>
@@ -28,7 +30,7 @@ function TipSelector(props) {
         })}
         <input
           onChange={(e) => {
-            setTip(e.target.value);
+            setTip(parseFloat(e.target.value));
           }}
           onClick={() => toggleActiveBtn()}
           className="btn custom-input"

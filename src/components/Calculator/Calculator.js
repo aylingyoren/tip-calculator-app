@@ -7,45 +7,39 @@ import TipSelector from "../TipSelector/TipSelector";
 import "./Calculator.css";
 
 function Calculator() {
-  const [tip, setTip] = useState("");
-  const [bill, setBill] = useState("");
-  const [numberOfPeople, setNumberOfPeople] = useState("");
+  const [tip, setTip] = useState(0);
+  const [bill, setBill] = useState(0);
+  const [numberOfPeople, setNumberOfPeople] = useState(1);
   const [totalPerPerson, setTotalPerPerson] = useState(0);
   const [tipPerPerson, setTipPerPerson] = useState(0);
-  const [reset, setReset] = useState(false);
 
   useEffect(() => {
-    if (parseFloat(numberOfPeople) === 0 || bill === "") {
+    if (numberOfPeople === 0 || bill === 0) {
       setTipPerPerson(0);
       setTotalPerPerson(0);
-    } else if (numberOfPeople === "") {
-      setTotalPerPerson(parseFloat(bill));
-    } else if (parseFloat(bill) > 0 && parseFloat(numberOfPeople) > 0) {
-      const tempTotal = parseFloat(bill) * (1 + tip / 100);
+    } else if (numberOfPeople === 0) {
+      setTotalPerPerson(bill);
+    } else if (bill > 0 && numberOfPeople > 0) {
+      const tempTotal = bill * (1 + tip / 100);
       const tempTotalPerPerson =
-        Math.round((tempTotal / parseFloat(numberOfPeople)) * 100) / 100;
+        Math.round((tempTotal / numberOfPeople) * 100) / 100;
       const tempTipPerPerson =
         Math.round(
-          ((tempTotal - parseFloat(bill)) / parseFloat(numberOfPeople)) * 100
+          ((tempTotal - bill) / numberOfPeople) * 100
         ) / 100;
       setTipPerPerson(tempTipPerPerson);
       setTotalPerPerson(tempTotalPerPerson);
     }
   }, [bill, tip, numberOfPeople]);
 
-  useEffect(() => {
-    if (reset) {
-      setTipPerPerson(0);
+  const handleReset = () => {
+    setTipPerPerson(0);
       setTotalPerPerson(0);
-      setReset(false);
-      setTip("");
-      setBill("");
-      setNumberOfPeople("");
+      setTip(0);
+      setBill(0);
+      setNumberOfPeople(1);
       toggleActiveBtn();
-    }
-  }, [reset]);
-
-  const handleReset = () => setReset(true);
+  };
 
   return (
     <div className="calculator">

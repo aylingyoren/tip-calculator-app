@@ -1,8 +1,10 @@
 import React from "react";
-import { ReactComponent as Dollar } from "../../images/icon-dollar.svg";
+import Dollar from "../../images/icon-dollar.svg";
 
 function Bill(props) {
   const { bill, setBill } = props;
+
+  if (!bill) setBill(0)
 
   return (
     <div className="bill">
@@ -11,9 +13,9 @@ function Bill(props) {
         className="input"
         value={bill}
         placeholder="0"
-        onChange={(e) => setBill(e.target.value)}
+        onChange={(e) => setBill(parseFloat(e.target.value))}
       />
-      <Dollar className="dollar" />
+      <img src={Dollar} alt="dollar sign" className="dollar" />
     </div>
   );
 }

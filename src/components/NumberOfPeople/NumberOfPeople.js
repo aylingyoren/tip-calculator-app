@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ReactComponent as Person } from "../../images/icon-person.svg";
+import Person from "../../images/icon-person.svg";
 import "./NumberOfPeople.css";
 
 function NumberOfPeople(props) {
@@ -7,12 +7,14 @@ function NumberOfPeople(props) {
   const [error, showError] = useState(false);
 
   useEffect(() => {
-    if (numberOfPeople === "0" || numberOfPeople === 0) {
+    if (numberOfPeople <= 0) {
       showError(true);
+    } else if (!numberOfPeople) {
+      setNumberOfPeople(0);
     } else {
       showError(false);
     }
-  }, [numberOfPeople]);
+  }, [numberOfPeople, setNumberOfPeople]);
 
   return (
     <>
@@ -22,13 +24,13 @@ function NumberOfPeople(props) {
           className={error ? "input input-error" : "input"}
           value={numberOfPeople}
           placeholder="0"
-          onChange={(e) => setNumberOfPeople(e.target.value)}
+          onChange={(e) => setNumberOfPeople(parseInt(e.target.value))}
         />
         <div>
-          <Person className="person" />
+          <img src={Person} alt="person sign" className="person" />
         </div>
       </div>
-      {error ? <p className="error">Can't be zero or empty</p> : null}
+      {error && <p className="error">Can't be zero or empty</p>}
     </>
   );
 }
